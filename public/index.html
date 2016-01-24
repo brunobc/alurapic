@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="alurapic">
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Alurapic</title>
@@ -9,28 +10,15 @@
     <link rel="stylesheet" href="css/efeitos.css">
     <script src="js/lib/angular.min.js"></script>
     <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+
     <script src="js/main.js"></script>
     <script src="js/controllers/fotos-controller.js"></script>
     <script src="js/directives/minhas-diretivas.js"></script>
 </head>
-<body ng-controller="FotosController">
+<body>
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="text-center">Alurapic</h1>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <form>
-                <input class="form-control" ng-model="filtro">
-                </form>
-            </div>
-        </div>
-        <div class="row">
-            <meu-painel class="col-sm-2 foto-animada" ng-repeat="foto in fotos | filter: filtro"
-            ng-model-options="{ debounce: 500 }" titulo="{{foto.titulo}}">
-                <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
-            </meu-painel>
-        </div>
+        <ng-view></ng-view>
     </div>
 </body>
 </html>
