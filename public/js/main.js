@@ -13,6 +13,11 @@ angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
 		controller: 'FotosController'
 	});
 
+	$routeProvider.when('/fotos/edit/:fotoId', {
+		templateUrl: 'partials/foto.html',
+		controller: 'FotosController'
+	});
+
 	$routeProvider.otherwise({redirectTo: '/fotos'});
 
 });
