@@ -13,13 +13,13 @@ angular.module('alurapic').controller('FotoController', function($scope, recurso
 
   $scope.submeter = function() {
     if ($scope.formulario.$valid) {
-
       cadastroDeFotos.cadastrar($scope.foto)
       .then(function (dados) {
         $scope.mensagem = dados.mensagem;
         if (dados.inclusao) {
           $scope.foto = {};
         }
+        //$scope.$broadcast('fotoCadastrada');
       })
       .catch(function (erro) {
         $scope.mensagem = erro.mensagem;
@@ -28,4 +28,7 @@ angular.module('alurapic').controller('FotoController', function($scope, recurso
     }
   };
 
+})
+.controller('CharadaController', function($scope) {
+  $scope.test = "Alura";
 });
